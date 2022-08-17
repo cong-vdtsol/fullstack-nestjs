@@ -41,7 +41,7 @@ const Home: React.FC = () => {
         Change
       </Button>
 
-      <Button onClick={() => router.push("/auth/login")}>Login</Button>
+      <Button onClick={() => router.push("./auth/user/login")}>Login</Button>
     </div>
   );
 };

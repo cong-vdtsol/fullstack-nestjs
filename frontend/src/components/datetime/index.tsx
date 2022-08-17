@@ -3,7 +3,7 @@ import React from "react";
 
 const { RangePicker } = DatePicker;
 
-const App: React.FC = () => (
+export const DateTime: React.FC = () => (
   <Space direction="vertical" size={12}>
     <RangePicker />
     <RangePicker showTime />
@@ -14,4 +14,3 @@ const App: React.FC = () => (
   </Space>
 );
 
-export default App;

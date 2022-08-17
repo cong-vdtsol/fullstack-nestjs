@@ -6,3 +6,20 @@ export const useLoginMutation = () => {
     return AuthService.login(input);
   });
 };
+export const useRegisterMutation = () => {
+  return useMutation((input) => {
+    return AuthService.postUser(input);
+  });
+};
+
+export const useResetMutation = () => {
+  return useMutation((input) => {
+    return AuthService.postReset(input);
+  });
+};
+
+export const useChangePassMutation = () => {
+  return useMutation((input) => {
+    return AuthService.postChangePass(input);
+  });
+};

@@ -14,7 +14,7 @@ const Comment = ({ comment, children }: CommentProps) => {
   );
 };
 
-const CommentPage = () => {
+export const CommentPage: React.FC = () => {
   const listComment = [
     {
       text: "Hello",
@@ -68,4 +68,4 @@ const CommentPage = () => {
   return <div>{renderComment(listComment)}</div>;
 };
 
-export default CommentPage;
+

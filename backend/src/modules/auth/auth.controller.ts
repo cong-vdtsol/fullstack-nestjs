@@ -35,6 +35,7 @@ export class AuthController {
   })
   @Post('login')
   async login(@Body() data: LoginDTO) {
+    console.log('--------------------------------------');
     const { accessToken, refreshToken } = await this.authService.login(
       data.email,
       data.password
@@ -48,7 +49,6 @@ export class AuthController {
 
   @Post('register')
   async signup(@Body() data: SignupDTO): Promise<Token> {
-    data.email = data.email;
     const { accessToken, refreshToken } = await this.authService.createUser(
       data
     );

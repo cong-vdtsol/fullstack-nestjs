@@ -12,7 +12,7 @@ Table User {
   password String [not null]
   firstname String
   lastname String
-  role Role [not null]
+  role Role [not null, default: 'USER']
   Notification Notification [not null]
 }
 

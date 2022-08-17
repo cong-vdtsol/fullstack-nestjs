@@ -3,10 +3,11 @@ import { Button, Checkbox, Form, Input } from "antd";
 import React from "react";
 import { useLoginMutation } from "src/services/rest/auth/auth.query";
 import Cookies from "js-cookie";
-
+import { useRouter } from "next/router";
+import Link from "next/link";
 const Login = () => {
   const { mutate: doLogin } = useLoginMutation();
-
+  const router = useRouter();
   const onFinish = async (values: any) => {
     console.log("Received values of form: ", values);
 
@@ -23,10 +24,14 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <Form
+    <div className="bg-backgroundAuth">
+      <div className="w-80 mx-auto py-60">
+        <div className="flex">
+            <h1>Login</h1>
+        </div>
+        <Form
         name="normal_login"
-        className="login-form"
+        className="login-form w-80 mx-auto"
         initialValues={{
           remember: true,
         }}
@@ -66,7 +71,7 @@ const Login = () => {
             <Checkbox>Remember me</Checkbox>
           </Form.Item>
 
-          <a className="login-form-forgot" href="">
+          <a onClick={() => router.push("../User/ResetPassword")} className="login-form-forgot float-right" >
             Forgot password
           </a>
         </Form.Item>
@@ -75,9 +80,13 @@ const Login = () => {
           <Button type="primary" htmlType="submit">
             Log in
           </Button>
-          Or <a href="">register now!</a>
+          <Link href='/auth/user/register'>
+            <a className="float-right">register now!</a>
+          </Link>
         </Form.Item>
       </Form>
+      </div>
+      
     </div>
   );
 };
