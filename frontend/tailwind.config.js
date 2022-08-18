@@ -10,7 +10,7 @@ module.exports = {
         "backgroundAuth": "url('https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg')"
       },
       spacing: {
-        '100': '52rem',
+        '100': '45rem',
       }
     },
   },
